@@ -1,1 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rahnuma-e-Deen Alliance (RDA) | Public Charitable Trust</title>
+    <style>
+        /* --- CSS Styles (Design) --- */
+        :root {
+            --primary-color: #004d40; /* Dark Islamic Green */
+            --secondary-color: #ffffff; /* White */
+            --accent-color: #000000; /* Black */
+            --text-color: #333;
+        }
+        
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: #f4f4f4;
+        }
 
+        /* Header & Logo */
+        header {
+            background: var(--secondary-color);
+            padding: 10px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            text-decoration: none;
+            color: var(--primary-color);
+        }
+
+        /* यह आपके असली लोगो की सेटिंग है */
+        .logo-img {
+            height: 60px; /* लोगो का साइज यहाँ से कम/ज्यादा कर सकते हैं */
+            width: auto;
+        }
+
+        .logo-text {
+            font-size: 1.5rem;
+            font-weight: bold;
+            line-height: 1.2;
+        }
+
+        .logo-text span {
+            display: block;
+            font-size: 0.9rem;
+            color: #555;
+            font-weight: normal;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0, 77, 64, 0.9), rgba(0, 77, 64, 0.8)), url('https://source.unsplash.com/1600x900/?mosque,islamic');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 80px 20px;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        /* Members Section */
+        .section {
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        h2 {
+            color: var(--primary-color);
+            margin-bottom: 30px;
+            font-size: 2rem;
+            text-decoration: underline;
+        }
+
+        /* ID Card Grid */
+        .member-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .member-card {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            border-top: 5px solid var(--primary-color);
+            text-align: left;
+        }
+
+        .member-card h3 {
+            margin: 0 0 5px 0;
+            color: var(--accent-color);
+            font-size: 1.3rem;
+        }
+
+        .member-card p {
+            margin: 5px 0;
+            font-size: 0.95rem;
+        }
+
+        .role-badge {
+            display: inline-block;
+            background: var(--primary-color);
+            color: white;
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        .id-number {
+            font-family: monospace;
+            background: #e0e0e0;
+            padding: 3px 8px;
+            border-radius: 3px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--accent-color);
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="#" class="logo-container">
+            <img src="rda-logo.png" alt="RDA Logo" class="logo-img">
+            <div class="logo-text">
+                RDA
+                <span>Public Charitable Trust</span>
+            </div>
+        </a>
+        <nav>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#members">Our Team</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1>RAHNUMA-E-DEEN ALLIANCE</h1>
+        <p>A Public Religious & Charitable Trust dedicated to Social Welfare, Education, and Peace.</p>
+        <p><em>Bandh Barji, Motipur, Muzaffarpur, Bihar – 843111</em></p>
+    </section>
+
+    <section id="members" class="section">
+        <div class="container">
+            <h2>Our Governing Body</h2>
+            <p>The dedicated core members driving the vision and mission of RDA Trust.</p>
+            
+            <div class="member-grid">
+                
+                <div class="member-card">
+                    <span class="role-badge">Founder-President</span>
+                    <h3>MD Mahfuj Alam</h3>
+                    <p><strong>ID No:</strong> <span class="id-number">RDA-2026-001</span></p>
+                    <p><strong>Responsibility:</strong> Final Guide & Visionary</p>
+                </div>
+
+                <div class="member-card">
+                    <span class="role-badge">Vice President</span>
+                    <h3>[Member Name]</h3>
+                    <p><strong>ID No:</strong> <span class="id-number">RDA-2026-002</span></p>
+                    <p><strong>Responsibility:</strong> Internal Discipline & Leadership</p>
+                </div>
+
+                <div class="member-card">
+                    <span class="role-badge">General Secretary</span>
+                    <h3>[Member Name]</h3>
+                    <p><strong>ID No:</strong> <span class="id-number">RDA-2026-003</span></p>
+                    <p><strong>Responsibility:</strong> Field Work & Coordination</p>
+                </div>
+
+                <div class="member-card">
+                    <span class="role-badge">Joint Secretary</span>
+                    <h3>[Member Name]</h3>
+                    <p><strong>ID No:</strong> <span class="id-number">RDA-2026-004</span></p>
+                    <p><strong>Responsibility:</strong> Meeting & Record Maintenance</p>
+                </div>
+
+                <div class="member-card">
+                    <span class="role-badge">Treasurer</span>
+                    <h3>[Member Name]</h3>
+                    <p><strong>ID No:</strong> <span class="id-number">RDA-2026-005</span></p>
+                    <p><strong>Responsibility:</strong> Donation Handling & Finance</p>
+                </div>
+
+                <div class="member-card">
+                    <span class="role-badge">Religious Coordinator</span>
+                    <h3>[Member Name]</h3>
+                    <p><strong>ID No:</strong> <span class="id-number">RDA-2026-006</span></p>
+                    <p><strong>Responsibility:</strong> Islamic Festivals Planning</p>
+                </div>
+
+                <div class="member-card">
+                    <span class="role-badge">Social Welfare Officer</span>
+                    <h3>[Member Name]</h3>
+                    <p><strong>ID No:</strong> <span class="id-number">RDA-2026-007</span></p>
+                    <p><strong>Responsibility:</strong> Village Disputes & Peace Control</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact">
+        <div class="container">
+            <p><strong>Head Office:</strong> Bandh Barji, Motipur, Muzaffarpur, Bihar – 843111</p>
+            <p>&copy; 2026 Rahnuma-e-Deen Alliance (RDA). All Rights Reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
