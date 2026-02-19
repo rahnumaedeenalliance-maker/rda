@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Members | Rahnuma-e-Deen Alliance (RDA)</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary-color: #004d40;
+            --light-green: #e0f2f1;
+            --secondary-color: #ffffff;
+            --accent-color: #000000;
+            --gold: #ffd700;
+            --text-color: #333;
+        }
+        
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f8f9fa;
+            color: var(--text-color);
+        }
+
+        /* Header (Simple version for sub-pages) */
+        header {
+            background: var(--secondary-color);
+            padding: 15px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .back-btn {
+            text-decoration: none;
+            color: var(--primary-color);
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+
+        .back-btn:hover { color: var(--gold); }
+
+        .page-title-banner {
+            background: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        .page-title-banner h1 { margin: 0; font-size: 2.5rem; }
+        .page-title-banner p { margin-top: 10px; opacity: 0.9; }
+
+        /* General Members Grid */
+        .container { max-width: 1200px; margin: 50px auto; padding: 0 20px; }
+        
+        .general-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 25px;
+        }
+
+        .general-card {
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+            border: 1px solid #eee;
+            transition: transform 0.3s;
+        }
+
+        .general-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary-color);
+        }
+
+        .general-img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 15px;
+            border: 4px solid var(--light-green);
+        }
+
+        .general-name { 
+            font-weight: bold; 
+            font-size: 1.1rem; 
+            margin-bottom: 5px; 
+            color: var(--primary-color);
+        }
+
+        .general-id { 
+            font-size: 0.85rem; 
+            color: #555; 
+            background: #f0f0f0;
+            padding: 4px 8px;
+            border-radius: 4px;
+            display: inline-block;
+            font-family: monospace;
+            font-weight: bold;
+        }
+
+        footer {
+            background: var(--accent-color);
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="index.html" class="back-btn"><i class="fas fa-arrow-left"></i> Back to Home</a>
+        <div style="font-weight: bold; font-size: 1.2rem; color: var(--primary-color);">RDA Trust</div>
+    </header>
+
+    <div class="page-title-banner">
+        <h1>Our Dedicated Members</h1>
+        <p>The strength of Rahnuma-e-Deen Alliance lies in our volunteers.</p>
+    </div>
+
+    <div class="container">
+        <div class="general-grid">
+            
+            <div class="general-card">
+                <img src="member1.jpg" onerror="this.src='https://placehold.co/150x150?text=Photo'" alt="Member" class="general-img">
+                <div class="general-name">MD KURASED</div>
+                <div class="general-id">1311250011</div>
+            </div>
+
+            <div class="general-card">
+                <img src="member2.jpg" onerror="this.src='https://placehold.co/150x150?text=Photo'" alt="Member" class="general-img">
+                <div class="general-name">MD SAHID</div>
+                <div class="general-id">1311250012</div>
+            </div>
+
+            <div class="general-card">
+                <img src="member3.jpg" onerror="this.src='https://placehold.co/150x150?text=Photo'" alt="Member" class="general-img">
+                <div class="general-name">MD AZAD ALAM</div>
+                <div class="general-id">1311250013</div>
+            </div>
+            
+            <div class="general-card">
+                <img src="member4.jpg" onerror="this.src='https://placehold.co/150x150?text=Photo'" alt="Member" class="general-img">
+                <div class="general-name">MD GULAME MUSTAFA</div>
+                <div class="general-id">1311250014</div>
+            </div>
+
+            </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Rahnuma-e-Deen Alliance (RDA). All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>
