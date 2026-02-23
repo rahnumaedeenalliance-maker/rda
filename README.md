@@ -5,7 +5,7 @@ trust
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rahnuma-e-Deen Alliance (RDA) | Public Charitable Trust</title>
+    <title>Rahnuma E Deen Alliance (RDA) | Public Charitable Trust</title>
     <style>
         /* --- CSS Styles (Design) --- */
         :root {
