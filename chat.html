@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Member Portal | RDA Chat</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+    <style>
+        :root {
+            --primary-color: #00695c; /* RDA Primary Brand Color */
+            --bg-color: #e0f2f1;
+            --text-color: #333;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+        }
+
+        /* Top Navigation for Members */
+        .member-nav {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .member-nav h2 { margin: 0; font-size: 1.2rem; }
+        
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+            font-size: 0.9rem;
+            font-weight: bold;
+        }
+
+        /* Chat Container */
+        .chat-container {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            max-width: 800px;
+            margin: 20px auto;
+            width: 95%;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            overflow: hidden;
+        }
+
+        /* Message Box Area */
+        .messages-area {
+            flex: 1;
+            padding: 20px;
+            overflow-y: auto;
+            background-color: #ffffff;
+            border-bottom: 1px solid #ddd;
+        }
+
+        /* Message Bubbles */
+        .msg {
+            margin-bottom: 15px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .msg-sender {
+            font-size: 0.8rem;
+            color: #666;
+            margin-bottom: 3px;
+            font-weight: bold;
+        }
+
+        .msg-bubble {
+            max-width: 70%;
+            padding: 10px 15px;
+            border-radius: 15px;
+            font-size: 0.95rem;
+            line-height: 1.4;
+            background-color: #f1f0f0;
+            color: var(--text-color);
+            align-self: flex-start;
+            border-top-left-radius: 0;
+        }
+
+        /* Current User Message Style (Right side) */
+        .msg.my-msg { align-items: flex-end; }
+        .msg.my-msg .msg-bubble {
+            background-color: var(--primary-color);
+            color: white;
+            border-top-left-radius: 15px;
+            border-top-right-radius: 0;
+        }
+
+        /* Image Attachment Preview */
+        .msg-img {
+            max-width: 200px;
+            border-radius: 10px;
+            margin-top: 5px;
+            cursor: pointer;
+        }
+
+        /* Input Area (Bottom) */
+        .input-area {
+            display: flex;
+            padding: 15px;
+            background: #f9f9f9;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .attach-btn {
+            background: none;
+            border: none;
+            color: var(--primary-color);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        .chat-input {
+            flex: 1;
+            padding: 12px 15px;
+            border: 1px solid #ccc;
+            border-radius: 25px;
+            font-size: 1rem;
+            outline: none;
+        }
+
+        .chat-input:focus { border-color: var(--primary-color); }
+
+        .send-btn {
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 1.2rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: 0.2s;
+        }
+
+        .send-btn:hover { transform: scale(1.05); }
+
+    </style>
+</head>
+<body>
+
+    <div class="member-nav">
+        <h2><i class="fas fa-shield-alt"></i> RDA Official Members</h2>
+        <div class="nav-links">
+            <a href="index.html"><i class="fas fa-home"></i> Home</a>
+            <a href="#" style="color: #ffcccc;"><i class="fas fa-sign-out-alt"></i> Logout</a>
+        </div>
+    </div>
+
+    <div class="chat-container">
+        
+        <div class="messages-area" id="chatBox">
+            
+            <div class="msg">
+                <span class="msg-sender">MD ARIF ALAM (Vice President)</span>
+                <div class="msg-bubble">
+                    Assalamu Alaikum, kal ki meeting ka time kya hai?
+                </div>
+            </div>
+
+            <div class="msg">
+                <span class="msg-sender">MANJUR ALAM</span>
+                <div class="msg-bubble">
+                    Blanket distribution ka kaam pura ho gaya. Ye rahi photo:
+                    <br>
+                    <img src="https://placehold.co/400x300?text=Blanket+Distribution" class="msg-img">
+                </div>
+            </div>
+
+            <div class="msg my-msg">
+                <span class="msg-sender">You (President)</span>
+                <div class="msg-bubble">
+                    Walikum Assalam, meeting kal asr ke baad hogi inshallah. Great work Manjur bhai!
+                </div>
+            </div>
+
+        </div>
+
+        <div class="input-area">
+            <input type="file" id="imageUpload" accept="image/*" style="display: none;">
+            
+            <button class="attach-btn" onclick="document.getElementById('imageUpload').click()">
+                <i class="fas fa-paperclip"></i>
+            </button>
+            
+            <input type="text" class="chat-input" placeholder="Type a message to members..." id="msgInput">
+            
+            <button class="send-btn" onclick="sendMessage()">
+                <i class="fas fa-paper-plane"></i>
+            </button>
+        </div>
+
+    </div>
+
+    <script>
+        // Supabase से कनेक्ट करने के लिए यहाँ कोड आएगा
+        function sendMessage() {
+            let input = document.getElementById('msgInput');
+            if(input.value.trim() !== "") {
+                alert("Supabase integration is pending. Message to send: " + input.value);
+                input.value = ""; // Clear input
+            }
+        }
+    </script>
+
+</body>
+</html>
